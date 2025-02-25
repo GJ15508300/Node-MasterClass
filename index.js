@@ -40,3 +40,38 @@ http
     });
   })
   .listen(8080);
+
+fs.appendFile("mynewfile1.txt", "Hello content!", function (err) {
+  if (err) throw err;
+  console.log("appendFile Saved!");
+});
+
+fs.open("mynewfile2.txt", "w", function (err, file) {
+  if (err) throw err;
+  console.log("open Saved!");
+});
+
+fs.writeFile("mynewfile3.txt", "Hello content!", function (err) {
+  if (err) throw err;
+  console.log("writeFile Saved!");
+});
+
+fs.appendFile("mynewfile1.txt", " This is my text.", function (err) {
+  if (err) throw err;
+  console.log("appendFile Updated!");
+});
+
+fs.writeFile('mynewfile3.txt', 'This is my text', function (err) {
+  if (err) throw err;
+  console.log('writeFile Replaced!');
+});
+
+// fs.unlink('mynewfile2.txt', function (err) {
+//   if (err) throw err;
+//   console.log('unlink File deleted!');
+// });
+
+fs.rename('mynewfile1.txt', 'myrenamedfile.txt', function (err) {
+  if (err) throw err;
+  console.log('rename File Renamed!');
+});
